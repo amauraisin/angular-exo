@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,27 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  Posts = [
-    {
-      title: 'Machine à laver',
-      content: 'Ma machine à laver de toute beauté',
-      loveIts: -1
-    },
-    {
-      title: 'Mercerie',
-      content: 'Quelle belle mercerie, ce bel endroit',
-      loveIts: 2
-    },
-    {
-      title: 'Micro-ondes',
-      content: 'Les ondes permettent de générer des petits plats sympas',
-      loveIts: -3
-    },
-    {
-      title: 'Laverie',
-      content: 'Une laverie ... ',
-      loveIts: 4
-    }
-  ];
+  constructor() {
+    const config = {
+      apiKey: 'AIzaSyCKhKBtOOwJuxECT-NiCLqGlzgvRuD5-qk',
+      authDomain: 'angular-exo.firebaseapp.com',
+      databaseURL: 'https://angular-exo.firebaseio.com',
+      projectId: 'angular-exo',
+      storageBucket: 'angular-exo.appspot.com',
+      messagingSenderId: '138755716703'
+    };
+    firebase.initializeApp(config);
+  }
 }

@@ -1,6 +1,4 @@
-<h1>
-  POSTS
-</h1>
-<ul class="list-group">
-  <app-post-list *ngFor="let Post of Posts" [title]="Post.title" [content]="Post.content" [loveIts]="Post.loveIts"></app-post-list>
-</ul>
+<app-header></app-header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
