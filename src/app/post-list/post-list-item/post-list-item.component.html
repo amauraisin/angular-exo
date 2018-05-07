@@ -1,0 +1,15 @@
+<div style="margin:10px" [ngClass]="{'list-group-item': true,
+    'list-group-item-success': post.loveIts>0,
+    'list-group-item-danger': post.loveIts<0
+    }">
+<h3 class="list-group-item-heading" [ngStyle]="{color: getColor()}">
+  {{ post.title }} <span class="badge"  [ngStyle]="{'background-color': getColor()}">{{ post.loveIts }}</span>
+  <em class="pull-right">Le {{ post.created_at | date:'dd/MM/yyyy à h:mm' }}</em>
+</h3>
+<p class="list-group-item-text">{{ post.content }}</p>
+<button class="btn btn-danger pull-right" (click)="onDeletePost()">
+  Supprimer le post
+</button>
+<button class="btn-success" (click)="onLikePost()">Love it</button>
+<button class="btn-danger" (click)="onDislikePost()">Don't love it</button>
+</div>
