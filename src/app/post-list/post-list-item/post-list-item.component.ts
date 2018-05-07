@@ -26,8 +26,8 @@ export class PostListItemComponent implements OnInit {
     this.postsService.updatePosts();
   }
 
-  onDeletePost(post: Post){
-    this.postsService.removePost(post);
+  onDeletePost(){
+    this.postsService.removePost(this.post);
   }
 
   getColor(){
